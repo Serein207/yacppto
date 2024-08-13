@@ -11,7 +11,12 @@ CmdArgs parseCmdArgs(int argc, char** argv) {
         .help("The output file(.tar) path")
         .default_value(std::string("./out"));
 
-    program.parse_args(argc, argv);
+    try {
+        program.parse_args(argc, argv);
+    } catch (const std::runtime_error& err) {
+        std::cerr << err.what() << std::endl;
+        std::exit(1);
+    }
 
     return {.inputPath = program.get<std::string>("--input-path"),
             .outputPath = program.get<std::string>("--output-path")};
