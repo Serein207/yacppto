@@ -1,6 +1,8 @@
 # yacppto
 
-yacppto 是~~下一代~~信息学竞赛题目格式转换和配置文件生成工具，将符合 [`hydro`](https://github.com/hydro-dev/Hydro) 的数据和`config.yaml`的题目，或由 [`hydro 题库`](https://hydro.ac/d/tk/p) 下载的题目，转换为符合 [`sastoj`](https://github.com/NJUPT-SAST/sastoj/)[`schema`](https://github.com/Jisu-Woniu/rsjudge-test-cases-schema) 的格式，同时也可以识别测试数据，生成满足条件的配置文件，因为写 rust 写到自闭，于是换成 C++ 来写。来源于 [`yapyto`](https://github.com/FishZe/yapyto)。
+因为写 rust 写到自闭，于是换成 C++ 来写
+
+yacppto 是~~下一代~~信息学竞赛题目格式转换和配置文件生成工具，将符合 [`hydro`](https://github.com/hydro-dev/Hydro) 的数据和`config.yaml`的题目，或由 [`hydro 题库`](https://hydro.ac/d/tk/p) 下载的题目，转换为符合 [`sastoj`](https://github.com/NJUPT-SAST/sastoj/)[`schema`](https://github.com/Jisu-Woniu/rsjudge-test-cases-schema) 的格式，同时也可以识别测试数据，生成满足条件的配置文件。来源于 [`yapyto`](https://github.com/FishZe/yapyto)。
 
 ## 兼容性
 
@@ -20,11 +22,6 @@ yacppto 是~~下一代~~信息学竞赛题目格式转换和配置文件生成�
 
 ## 用法
 
-安装依赖
-```bash
-pip install -r requirements.txt
-```
-使用
 ```shell
 Usage: yacppto [OPTIONS]
 
@@ -33,7 +30,7 @@ Options:
   -o, --output-path <OUTPUT_PATH>  The output file(.tar) path [default: ./out]
   -h, --help                       Print help
   -V, --version                    Print version
-````
+```
 
 ### 输入目录应满足的格式：
 1. `type=custom`
@@ -69,7 +66,7 @@ Options:
     │       ├── 1.in
     │       ├── 1.out
     │       └── config.yaml
-    └── 导入指南。txt
+    └── 导入指南.txt
 
     5 directories, 11 files
    ```
