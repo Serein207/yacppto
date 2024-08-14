@@ -65,8 +65,9 @@ int main(int argc, char** argv) {
     if (!checkPath(inputPath, outputPath))
         return 1;
 
-    std::cout << "Start to convert the data\nInput directory: " << fs::absolute(inputPath).string()
-              << "\nOutput directory: " << fs::absolute(outputPath).string() << std::endl;
+    std::cout << "Start to convert the data\nInput directory: \""
+              << fs::absolute(inputPath).string()
+              << "\"\nOutput directory: " << fs::absolute(outputPath).string() << "\"\n";
 
     if (isCustomData(inputPath)) {
     } else if (isHydroExport(inputPath)) {
