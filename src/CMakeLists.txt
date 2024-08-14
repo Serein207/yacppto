@@ -17,8 +17,6 @@ set(REFLECTCPP_YAML ON) # Optional
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
-    Boost::boost
-    Boost::system
     argparse
     reflectcpp
     version::version

@@ -5,15 +5,11 @@ on:
     paths:
     - "src/**"
     - "CMakeLists.txt"
-    - "CMakePresets.json"
-    - "vcpkg*"
     - ".github/workflows/codeql.yml"
   pull_request:
     paths:
     - "src/**"
     - "CMakeLists.txt"
-    - "CMakePresets.json"
-    - "vcpkg*"
     - ".github/workflows/codeql.yml"
   schedule:
     - cron: '38 9 * * 6'
@@ -69,12 +65,6 @@ jobs:
     - name: Setup CMake
       uses: lukka/get-cmake@latest
 
-    - name: Setup vcpkg
-      uses: lukka/run-vcpkg@v11
-      with:
-        vcpkgConfigurationJsonGlob: 'vcpkg-configuration.json'
-        vcpkgJsonGlob: 'vcpkg.json'
-
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
@@ -84,9 +74,6 @@ jobs:
     - if: matrix.build-mode == 'manual'
       name: Build with CMake
       uses: lukka/run-cmake@v10
-      with:
-        configurePreset: 'native'
-        buildPreset: 'native'
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3

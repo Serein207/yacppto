@@ -17,9 +17,6 @@ endif()
 
 project(yacppto VERSION ${VERSION_SEMANTIC} LANGUAGES CXX)
 
-# find vcpkg-installed
-find_package(Boost REQUIRED COMPONENTS system)
-
 # source code
 add_subdirectory(src)
 # cmd arg parser

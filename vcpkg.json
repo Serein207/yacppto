@@ -1,6 +1,0 @@
-{
-    "name": "yarusto",
-    "dependencies": [
-        "boost-system"
-    ]
-}
