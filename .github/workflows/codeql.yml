@@ -73,7 +73,7 @@ jobs:
 
     - if: matrix.build-mode == 'manual'
       name: Build with CMake
-      uses: lukka/run-cmake@v10
+      run: cmake -B build -S . && cmake --build build
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
