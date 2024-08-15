@@ -21,6 +21,10 @@ project(yacppto VERSION ${VERSION_SEMANTIC} LANGUAGES CXX)
 add_subdirectory(src)
 # cmd arg parser
 add_subdirectory(3rdpart/argparse)
+# toml
+add_subdirectory(3rdpart/tomlplusplus)
+# yaml
+add_subdirectory(3rdpart/yaml-cpp)
 # reflect-cpp
 add_subdirectory(3rdpart/reflect-cpp)
 

@@ -19,5 +19,7 @@ target_link_libraries(${PROJECT_NAME}
   PRIVATE
     argparse
     reflectcpp
+    yaml-cpp
+    tomlplusplus::tomlplusplus
     version::version
 )

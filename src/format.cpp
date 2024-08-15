@@ -71,4 +71,6 @@ void convertCustomDir(fs::path const& inputPath, fs::path const& outputPath) {
     std::cout << "Data is converted." << std::endl;
 }
 
-std::optional<Config> loadDataDir(fs::path const& inputPath) {}
+std::optional<Config> loadDataDir(fs::path const& inputPath) {
+    return std::nullopt;
+}

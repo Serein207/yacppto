@@ -4,3 +4,9 @@
 [submodule "3rdpart/reflect-cpp"]
 	path = 3rdpart/reflect-cpp
 	url = https://github.com/getml/reflect-cpp.git
+[submodule "3rdpart/yaml-cpp"]
+	path = 3rdpart/yaml-cpp
+	url = https://github.com/jbeder/yaml-cpp.git
+[submodule "3rdpart/tomlplusplus"]
+	path = 3rdpart/tomlplusplus
+	url = https://github.com/marzer/tomlplusplus.git
