@@ -1,5 +1,5 @@
-#include "format.h"
 #include <filesystem>
+#include <format.h>
 #include <iostream>
 
 bool isCustomData(fs::path const& inputPath) {
@@ -38,6 +38,17 @@ bool isHydroExport(fs::path const& inputPath) {
     return false;
 }
 
+std::vector<fs::path> getHydroExportProblems(fs::path const& inputPath) {
+    std::vector<fs::path> problems;
+    for (auto const& f : fs::directory_iterator(inputPath)) {
+        if (fs::is_directory(f) && fs::exists(f.path() / "testdata")
+            && isCustomData(f.path() / "testdata")) {
+            problems.push_back(f);
+        }
+    }
+    return problems;
+}
+
 void convertCustomDir(fs::path const& inputPath, fs::path const& outputPath) {
     std::cout << "Custom data format is detected, try to find config.yaml or generate config\n";
 
@@ -59,3 +70,5 @@ void convertCustomDir(fs::path const& inputPath, fs::path const& outputPath) {
 
     std::cout << "Data is converted." << std::endl;
 }
+
+std::optional<Config> loadDataDir(fs::path const& inputPath) {}
