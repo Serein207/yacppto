@@ -1,3 +1,4 @@
+#include "type/Config.h"
 #include <filesystem>
 #include <format.h>
 #include <iostream>
@@ -56,13 +57,7 @@ void convertCustomDir(fs::path const& inputPath, fs::path const& outputPath) {
     // if (!config) {
     //     std::cerr << "Failed to load config.yaml and generate config, exit." << std::endl;
     //     exit(1);
-    // }
-
-    if (!fs::exists(outputPath)) {
-        fs::create_directories(outputPath);
-    }
-
-    // config->save(outputPath);
+    // } // config->save(outputPath);
 
     // std::cout << "Config file is saved, start to convert the data." << std::endl;
 
@@ -72,5 +67,9 @@ void convertCustomDir(fs::path const& inputPath, fs::path const& outputPath) {
 }
 
 std::optional<Config> loadDataDir(fs::path const& inputPath) {
-    return std::nullopt;
+    auto configFilePath = inputPath / "config.yaml";
+    if (!fs::exists(configFilePath) || !fs::is_regular_file(configFilePath)) {
+        return std::nullopt;
+    }
+    //auto config = loadConfigFile(configFilePath);
 }
